@@ -1,6 +1,7 @@
 package guru.springframework.models;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Recipe {
@@ -9,15 +10,18 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String decription;
+    private String description;
     private Integer prepTime;
     private Integer cookTime;
-    private Integer serviings;
+    private Integer servings;
     private String source;
     private String url;
-    private String direction;
+    private String directions;
     //todo add
     //private Difficulty difficulty;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe") // The value of mappedBy is the target within ingredient
+    private Set<Ingredient> ingredients;
 
     @Lob
     private Byte[] images;
@@ -33,12 +37,12 @@ public class Recipe {
         this.id = id;
     }
 
-    public String getDecription() {
-        return decription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDecription(String decription) {
-        this.decription = decription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Integer getPrepTime() {
@@ -57,12 +61,12 @@ public class Recipe {
         this.cookTime = cookTime;
     }
 
-    public Integer getServiings() {
-        return serviings;
+    public Integer getServings() {
+        return servings;
     }
 
-    public void setServiings(Integer serviings) {
-        this.serviings = serviings;
+    public void setServings(Integer servings) {
+        this.servings = servings;
     }
 
     public String getSource() {
@@ -81,12 +85,20 @@ public class Recipe {
         this.url = url;
     }
 
-    public String getDirection() {
-        return direction;
+    public String getDirections() {
+        return directions;
     }
 
-    public void setDirection(String direction) {
-        this.direction = direction;
+    public void setDirections(String directions) {
+        this.directions = directions;
+    }
+
+    public Set<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(Set<Ingredient> ingredients) {
+        this.ingredients = ingredients;
     }
 
     public Byte[] getImages() {
