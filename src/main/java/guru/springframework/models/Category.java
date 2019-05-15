@@ -3,18 +3,15 @@ package guru.springframework.models;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import java.util.HashSet;
 import java.util.Set;
 
 @Data
 @EqualsAndHashCode(exclude = {"recipes"})
 @Entity
-public class Category {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Category extends BaseEntity {
 
     private String description;
 
