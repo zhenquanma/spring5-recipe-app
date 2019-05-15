@@ -3,14 +3,16 @@ package guru.springframework.models;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.Entity;
-import javax.persistence.Lob;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Data
 @EqualsAndHashCode(exclude = {"recipe"})
 @Entity
-public class Notes extends BaseEntity {
+public class Notes{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @OneToOne
     private Recipe recipe;
