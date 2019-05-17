@@ -1,6 +1,7 @@
 package guru.springframework.controllers;
 
 import guru.springframework.commands.RecipeCommand;
+import guru.springframework.services.IngredientService;
 import guru.springframework.services.RecipeService;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,16 +21,20 @@ public class IngredientControllerTest {
     @Mock
     RecipeService service;
 
+    @Mock
+    IngredientService ingredientService;
+
     IngredientController controller;
 
     MockMvc mockMvc;
+
 
     @Before
     public void setUp() throws Exception {
 
         MockitoAnnotations.initMocks(this);
 
-        controller = new IngredientController(service);
+        controller = new IngredientController(service, ingredientService);
 
         mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
     }
