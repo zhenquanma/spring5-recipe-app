@@ -101,4 +101,31 @@ public class IngredientServiceImpl implements IngredientService {
 
         return ingredientToIngredientCommand.convert(savedIngredientOptional.get());
     }
+
+    @Override
+    public void deleteByRecipeIdAndIngredientId(Long recipeId, Long id) {
+        Optional<Recipe> recipeOptional = recipeRepository.findById(recipeId);
+
+        if(!recipeOptional.isPresent()) {
+            throw new RuntimeException("RECIPE NOT FOUND!");
+        }
+
+        Recipe recipe = recipeOptional.get();
+
+
+        Optional<Ingredient> ingredientOptional = recipe.getIngredients()
+                .stream()
+                .filter(ingredient -> ingredient.getId().equals(id))
+                .findFirst();
+
+        if(!ingredientOptional.isPresent()) {
+            throw new RuntimeException("INGREDIENT NOT FOUND");
+        }
+
+        Ingredient ingredToDelete = ingredientOptional.get();
+        recipe.getIngredients().remove(ingredToDelete);
+        ingredToDelete.setRecipe(null); //Hibernate will delete it automatically
+        recipeRepository.save(recipe);
+    }
+
 }

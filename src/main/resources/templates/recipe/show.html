@@ -22,20 +22,33 @@
         <div class="col-md-8 offset-md-2">
             <div class="card">
                 <div class="card-header bg-primary text-white">
-                    <h4 class="card-text" th:text="${recipe.description}">Recipe Description</h4>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <h4 class="card-text" th:text="${recipe.description}">Recipe Description</h4>
+                        </div>
+                        <div class="col-md-3">
+                            <a class="btn btn-light" href="#" th:href="@{'/recipe/' + ${recipe.id} + '/image'}" role="button">Change Image</a>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-3">
                             <h5>Categories:</h5>
                         </div>
-                        <div class="col-md-9">
+                        <div class="col-md-3">
                             <ul>
                                 <li th:remove="all">one</li>
                                 <li th:remove="all">two</li>
                                 <li th:each="category : ${recipe.categories}"
                                     th:text="${category.description}">three</li>
                             </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="../../static/images/guacamole-horiz-a-1600-1024x729.jpg"
+                                 th:src="@{'/recipe/' + ${recipe.id} + '/recipeimage'}"
+                                 height="200">
                         </div>
                     </div>
                     <div class="row">

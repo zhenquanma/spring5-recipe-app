@@ -50,7 +50,7 @@ public class RecipeController {
 
     @GetMapping("/{id}/delete")
     public String deleteCommand(@PathVariable String id) {
-        log.debug("Deleteing ID: " + id);
+        log.debug("Deleting Recipe ID: " + id);
 
         recipeService.deleteById(Long.valueOf(id));
 
