@@ -93,5 +93,4 @@ public class RecipeServiceImplTest {
 
         Recipe recipe = recipeService.findById(1l);
     }
-
 }
