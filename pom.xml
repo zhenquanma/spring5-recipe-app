@@ -4,7 +4,7 @@
 	<groupId>guru.springframework</groupId>
 	<artifactId>spring5-recipe-app</artifactId>
 
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>spring5-recipe-app</name>
@@ -172,7 +172,7 @@
 
 	<scm>
 		<developerConnection>scm:git:git@github.com:zhenquanma/spring5-recipe-app.git</developerConnection>
-	  <tag>mysql_version</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 </project>
