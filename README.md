@@ -6,15 +6,13 @@
 Recipe Application is a [Spring Boot](https://spring.io/guides/gs/spring-boot) application built using [Maven](https://spring.io/guides/gs/maven/). Users can upload, view recipes with this web application. The project was developed originated from an online course named [Spring Framework 5 - Beginner to Guru](https://go.springframework.guru/spring-framework-5-online-course)
 
 ## Getting Started
-Recipe Application has two versions based on different database, which are MySQL and MongoDB.
+Recipe Application in this repository is using MySQL as its database, and H2 for testing.
 See instructions below to get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 The following items should be installed in your system:
 * Java 8 or newer.
-* MySQL (For MySQL version)
-* MongoDB (For MongoDB version)
-
+* MySQL
 
 
 ## Running Recipe locally:
@@ -32,9 +30,8 @@ You can then access Recipe here: http://localhost:8080/
 In its default configuration, Recipe uses an in-memory database (H2) which gets populated at startup with data. 
 
 #### MySQL Version:
-Before your first time to run the application, you will need to run with different profile: spring.profiles.active=dev
+Before your first time to run the application, you will need to run with different profile: ```spring.profiles.active=dev```
 
-####MongoDB Version:
 
 
 
