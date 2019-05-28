@@ -16,7 +16,10 @@ The following items should be installed in your system:
 
 
 ## Running Recipe locally:
-1. Download a version of code under the release tab
+1. To download the code, you can either get one from the release tab or use your command line (Recommand):
+```
+git clone https://github.com/zhenquanma/spring5-recipe-app.git
+```
 2. Build a jar file and run it from the command line
 ```
 cd spring5-recipe-app-mysql_version
