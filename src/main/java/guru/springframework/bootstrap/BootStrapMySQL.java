@@ -81,7 +81,7 @@ public class BootStrapMySQL implements ApplicationListener<ContextRefreshedEvent
         unitOfMeasureRepository.save(dash);
 
         UnitOfMeasure each = new UnitOfMeasure();
-        each.setDescription("each");
+        each.setDescription("Each");
         unitOfMeasureRepository.save(each);
 
         UnitOfMeasure pinch = new UnitOfMeasure();
